@@ -14,16 +14,37 @@ You can install the package via composer:
 composer require vvinners/movider
 ```
 
-## Usage
-
-```php
-// Usage description here
-```
-
-### Testing
+Publish config file to app/config
 
 ```bash
-composer test
+php artisan vendor:publish --provider="VVinners\Movider\MoviderServiceProvider" --tag=config
+```
+
+Put this to config/app.php if the package is not auto discovered
+
+```bash
+VVinners\Movider\MoviderServiceProvider::class
+```
+
+## Usage
+
+You can add Movider credentials into your .env file: 
+
+```php
+MOVIDER_API_KEY=************************
+MOVIDER_API_SECRET=********************************
+```
+
+### Demo
+
+Send SMS API by passing message and phone number
+Last variable can be optional
+
+```php
+use VVinners\Movider\Movider;
+
+$movider = new Movider;
+$response = $moviderProvider->sendMessage('Test', '60123456789', 'MOVIDER');
 ```
 
 ### Changelog
