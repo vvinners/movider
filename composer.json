@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vvinners\\Movider\\": "src"
+            "VVinners\\Movider\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vvinners\\Movider\\Tests\\": "tests"
+            "VVinners\\Movider\\Tests\\": "tests"
         }
     },
     "scripts": {
