@@ -18,6 +18,8 @@ Publish config file to app/config
 
 ```bash
 php artisan vendor:publish --provider="VVinners\Movider\MoviderServiceProvider" --tag=config
+php artisan vendor:publish --provider="VVinners\Movider\MoviderServiceProvider" --tag=migration
+php artisan migrate --path=/database/migrations/2021_09_22_073143_create_movider_log_table.php 
 ```
 
 Put this to config/app.php if the package is not auto discovered
