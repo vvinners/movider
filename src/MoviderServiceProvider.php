@@ -17,12 +17,16 @@ class MoviderServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'movider');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'movider');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('movider.php'),
             ], 'config');
+
+            $this->publishes([
+                __DIR__.'/../database/2021_09_22_073143_create_movider_log_table.php' => database_path('/migrations/2021_09_22_073143_create_movider_log_table.php'),
+            ], 'migration');
 
             // Publishing the views.
             /*$this->publishes([
