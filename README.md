@@ -45,7 +45,7 @@ Last variable can be optional
 ```php
 use VVinners\Movider\Movider;
 
-$movider = new Movider;
+$moviderProvider = new Movider;
 $response = $moviderProvider->sendMessage('Test', '60123456789', 'MOVIDER');
 ```
 
